@@ -1,8 +1,10 @@
 export class CrewModel{
+    position: number = 0;
     firstName: string = "";
     lastName: string = "";
     nationality: Nationality = Nationality.Turkish;
     title: Title = Title.Officer;
+    certificates: string = "";
     daysOnBoard: number = 0;
     dailyRate: number = 0;
     currency: Currency = Currency.USD;

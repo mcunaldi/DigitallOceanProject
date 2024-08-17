@@ -1,6 +1,7 @@
 {
     "crews": [
         {
+            "position": 1,
             "firstName": "Mehmet Can",
             "lastName": "Ünaldı",
             "nationality": "Turkish",
@@ -12,10 +13,11 @@
             "totalIncome": 0
         },
         {
+            "position": 2,
             "firstName": "Can",
             "lastName": "Ünaldı",
             "nationality": "English",
-            "title": "Officer",
+            "title": "Captain",
             "certificates": "Officer",
             "daysOnBoard": 1,
             "dailyRate": 10,
