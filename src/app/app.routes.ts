@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { LayoutComponent } from './components/layout/layout.component';
 import { CardPageComponent } from './components/card-page/card-page.component';
+import { CertificateComponent } from './components/certificate/certificate.component';
 
 export const routes: Routes = [
     {
@@ -8,8 +9,12 @@ export const routes: Routes = [
         component: LayoutComponent,
         children: [
             {
-                path: "",
+                path: "card-page",
                 component: CardPageComponent
+            },
+            {
+                path: "certificate",
+                component: CertificateComponent
             }
         ]
     }

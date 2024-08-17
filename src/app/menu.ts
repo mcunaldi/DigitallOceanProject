@@ -8,18 +8,17 @@ export class MenuModel {
 
 export const Menus: MenuModel[] = [
     {
-        name: "Pages",
-        icon: "fas fa-solid fa-home",
-        url: "/",
+        name: "Crews",
+        icon: "fas fa-solid fa-anchor",
+        url: "/card-page",
         isTitle: false,
-        subMenus: [
-            {
-                name: " Card",
-                icon: "fas fa-solid fa-home",
-                url: "card-page",
-                isTitle: false,
-                subMenus: []
-            }
-        ]
+        subMenus: []
+    },
+    {
+        name: "Certificates",
+        icon: "fas fa-solid fa-certificate",
+        url: "/certificate",
+        isTitle: false,
+        subMenus: []
     }
 ]

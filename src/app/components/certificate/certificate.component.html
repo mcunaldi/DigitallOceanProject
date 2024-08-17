@@ -1,0 +1,42 @@
+<div class="content-wrapper">
+    <section class="content-header">
+      <div class="container-fluid">
+      </div>
+    </section>
+    <section class="content">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Certificate List</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-group row">
+            <div class="col-9">
+              <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addCertificateModal">
+                <i class="fa-solid fa-plus me-1"></i>
+                Add Certificate
+              </button>
+            </div>
+          </div>
+          <div class="form-group">
+            <table mat-table class="mat-elevation-z8">
+  
+              <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef> No. </th>
+                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+              </ng-container>
+  
+              <ng-container matColumnDef="certificateName">
+                <th mat-header-cell *matHeaderCellDef> Certificate Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+              </ng-container>
+  
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+  
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  

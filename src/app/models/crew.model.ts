@@ -11,23 +11,40 @@ export class CrewModel{
     totalIncome: number = 0;
 }
 
-export enum Title{
-    Captain = 0,
-    Engineer = 1,
-    Cooker = 2,
-    Mechanicer = 3,
-    Officer = 4
+// export enum Title{
+//     Captain = 0,
+//     Engineer = 1,
+//     Cooker = 2,
+//     Mechanicer = 3,
+//     Officer = 4
+//   }
+
+  export enum Title{
+    Captain = 'Captain',
+    Engineer = 'Engineer',
+    Cooker = 'Cooker',
+    Mechanic = 'Mechanic',
+    Officer = 'Officer'
   }
 
   export enum Currency{
-    USD = 0,
-    EURO = 1
+    USD = "USD",
+    EURO = "EURO"
   }
 
   export enum Nationality{
-    Turkish = 0,
-    American = 1,
-    British = 2,
-    German = 3,
-    Portuguese = 4
+    Turkish = "Turkish",
+    American = "American",
+    British = "British",
+    German = "German",
+    Portuguese = "Portuguese"
   }
+
+  export enum Certificate {
+    STCWBasicSafetyTraining = 'STCW Basic Safety Training',
+    AdvancedFireFighting = 'Advanced Fire Fighting',
+    MedicalFirstAid = 'Medical First Aid',
+    GMDSSGeneralOperatorsCertificate = 'GMDSS General Operator\'s Certificate',
+    BridgeResourceManagement = 'Bridge Resource Management'
+  }
+  

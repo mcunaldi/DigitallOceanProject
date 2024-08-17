@@ -1,28 +1,41 @@
 {
-    "crews": [
-        {
-            "position": 1,
-            "firstName": "Mehmet Can",
-            "lastName": "Ünaldı",
-            "nationality": "Turkish",
-            "title": "Officer",
-            "certificates": "Officer",
-            "daysOnBoard": 1,
-            "dailyRate": 10,
-            "currency": "USD",
-            "totalIncome": 0
-        },
-        {
-            "position": 2,
-            "firstName": "Can",
-            "lastName": "Ünaldı",
-            "nationality": "English",
-            "title": "Captain",
-            "certificates": "Officer",
-            "daysOnBoard": 1,
-            "dailyRate": 10,
-            "currency": "USD",
-            "totalIncome": 0
-        }
-    ]
+  "crews": [
+    {
+      "position": 1,
+      "firstName": "Mehmet Can",
+      "lastName": "Ünaldı",
+      "nationality": "Turkish",
+      "title": "Officer",
+      "certificates": "Officer",
+      "daysOnBoard": 1,
+      "dailyRate": 10,
+      "currency": "USD",
+      "totalIncome": 0
+    },
+    {
+      "position": 2,
+      "firstName": "Can",
+      "lastName": "Ünaldı",
+      "nationality": "English",
+      "title": "Captain",
+      "certificates": "Officer",
+      "daysOnBoard": 1,
+      "dailyRate": 10,
+      "currency": "USD",
+      "totalIncome": 0
+    },
+    {
+      "id": "92b9",
+      "position": 0,
+      "firstName": "Mehmet Can",
+      "lastName": "ÜNALDI",
+      "nationality": "Turkish",
+      "title": "Engineer",
+      "certificates": "",
+      "daysOnBoard": 52,
+      "dailyRate": 42,
+      "currency": "EURO",
+      "totalIncome": 0
+    }
+  ]
 }
