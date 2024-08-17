@@ -32,24 +32,33 @@
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Model Adı</th>
-                  <th>Cinsiyet</th>
-                  <th>Kategori</th>
-                  <th>Görsel</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Nationality</th>
+                  <th>Title</th>
+                  <th>Certificates</th>
+                  <th>Days On Board</th>
+                  <th>Daily Rate</th>
+                  <th>Currency</th>
+                  <th>Total Income</th>
                 </tr>
               </thead>
               <tbody>
-                <!-- @for(data of models | mainBases: search; track data){
+                @for(data of models; track data){
                 <tr>
-                  <td><button class="btn btn-primary" [routerLink]="['/main-base-control', data.id]"
-                      target="_blank">Details</button></td>
-                  <td>{{$index + 1}}</td>
-                  <td>{{ data.name }}</td>
-                  <td>{{data.mainBaseDetails.genderType?.name}}</td>
-                  <td>{{data.mainBaseDetails.category?.name}}</td>
-                  <td><img [src]="data.imageUrl" width="50" class="thumbnail"></td>
+                  <td>1</td>
+                  <td>{{ data.firstName }}</td>
+                  <td>{{ data.lastName}}</td>
+                  <td>{{data.nationality}}</td>
+                  <td>{{data.title}}</td>                  
+                  <td><button class="btn btn-primary"
+                    target="_blank">Certificates</button></td>
+                  <td>{{data.daysOnBoard}}</td>
+                  <td>{{data.dailyRate}}</td>
+                  <td>{{data.currency}}</td>
+                  <td>{{data.daysOnBoard * data.dailyRate}}</td>
                 </tr>
-                } -->
+                }
               </tbody>
             </table>
           </div>
@@ -58,4 +67,3 @@
     </div>
   </section>
 </div>
-
