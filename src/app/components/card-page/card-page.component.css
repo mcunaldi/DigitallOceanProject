@@ -10,3 +10,13 @@
 .certificateModal {
   z-index: 2000;
 }
+
+/* Başlık hücreleri için ortalama */
+.mat-header-cell {
+  text-align: center; /* Başlıkları ortalar */
+}
+
+/* Veri hücreleri için ortalama */
+.mat-cell {
+  text-align: center; /* Verileri ortalar */
+}

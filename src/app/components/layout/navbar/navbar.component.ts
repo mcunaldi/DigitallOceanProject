@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { TranslationService } from '../../../services/translation.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,14 +12,22 @@ export class NavbarComponent {
 
   translate: TranslateService = inject(TranslateService);
 
-  constructor(
-    private translationService: TranslationService
-  ){}
+  constructor(){
+    this.setLanguageFromStorage();
+  }
 
   translateText(lang: string) {
     this.translate.use(lang);
-
-    this.translationService.triggerEvent();
+    localStorage.setItem('selectedLanguage', lang);
   }
+
+    private setLanguageFromStorage() {
+      const lang = localStorage.getItem('selectedLanguage');
+      if (lang) {
+        this.translate.use(lang);
+      } else {
+        this.translate.setDefaultLang('en');
+      }
+    }
 
 }

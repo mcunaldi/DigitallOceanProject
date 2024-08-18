@@ -6,7 +6,6 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { HttpService } from '../../services/http.service';
 import { CertificateModel } from '../../models/certificate.model';
 import { TranslateModule } from '@ngx-translate/core';
-import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-card-page',
@@ -38,8 +37,7 @@ export class CardPageComponent {
   certificateNames: string[] = [];
     
   constructor(
-    private http: HttpService,
-    private translateService : TranslationService) 
+    private http: HttpService) 
   {
     this.getAll();
     this.getCertificates();
