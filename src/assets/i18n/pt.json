@@ -1,0 +1,87 @@
+{
+    "menu": {
+      "home": "Início",
+      "crewList": "Lista de Tripulação",
+      "addCrew": "Adicionar Tripulação",
+      "updateCrew": "Atualizar Tripulação",
+      "certificates": "Certificados",
+      "settings": "Configurações",
+      "language": "Idioma",
+      "logout": "Sair"
+    },
+    "crewList": {
+      "title": "Lista de Tripulação",
+      "addCrewButton": "Adicionar Tripulação",
+      "firstName": "Primeiro Nome",
+      "lastName": "Sobrenome",
+      "nationality": "Nacionalidade",
+      "daysOnBoard": "Dias a Bordo",
+      "dailyRate": "Taxa Diária",
+      "currency": "Moeda",
+      "totalIncome": "Rendimento Total",
+      "actions": "Ações",
+      "editButton": "Editar",
+      "deleteButton": "Excluir"
+    },
+    "addCrewModal": {
+      "title": "Adicionar Tripulação",
+      "firstName": "Primeiro Nome",
+      "lastName": "Sobrenome",
+      "certificates": "Certificados",
+      "nationality": "Nacionalidade",
+      "daysOnBoard": "Dias a Bordo",
+      "currency": "Moeda",
+      "dailyRate": "Taxa Diária",
+      "saveButton": "Salvar"
+    },
+    "updateCrewModal": {
+      "title": "Atualizar Tripulação",
+      "firstName": "Primeiro Nome",
+      "lastName": "Sobrenome",
+      "nationality": "Nacionalidade",
+      "daysOnBoard": "Dias a Bordo",
+      "currency": "Moeda",
+      "dailyRate": "Taxa Diária",
+      "saveChangesButton": "Salvar Alterações"
+    },
+    "certificateList": {
+      "title": "Lista de Certificados",
+      "addCertificateButton": "Adicionar Certificado",
+      "certificateId": "ID do Certificado",
+      "certificateName": "Nome do Certificado",
+      "description": "Descrição"
+    },
+    "addCertificateModal": {
+      "title": "Adicionar Certificado",
+      "certificateName": "Nome do Certificado",
+      "description": "Descrição",
+      "saveButton": "Salvar"
+    },
+    "updateCertificateModal": {
+      "title": "Atualizar Certificado",
+      "certificateName": "Nome do Certificado",
+      "saveChangesButton": "Salvar Alterações"
+    },
+    "certificateModal": {
+      "title": "Detalhes do Certificado",
+      "closeButton": "Fechar"
+    },
+    "languageSelector": {
+      "english": "Inglês",
+      "french": "Francês",
+      "portuguese": "Português"
+    },
+    "homepage": {
+      "welcomeMessage": "Bem-vindo ao Sistema de Gestão de Tripulação",
+      "crewCount": "Total de Membros da Tripulação",
+      "viewDetailsButton": "Ver Detalhes"
+    },
+    "actions": {
+      "edit": "Editar",
+      "delete": "Excluir",
+      "save": "Salvar",
+      "cancel": "Cancelar",
+      "close": "Fechar"
+    }
+  }
+  

@@ -6,9 +6,14 @@
     </ul>
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <a class="nav-link btn btn-outline-danger">
-                <i class="fas fa-solid fa-power-off text-danger"></i>
-            </a>
+            <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{'Language' | translate}}
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="languageDropdown">
+                <button class="dropdown-item" (click)="translateText('en')">English</button>
+                <button class="dropdown-item" (click)="translateText('fr')">Français</button>
+                <button class="dropdown-item" (click)="translateText('pt')">Español</button>
+              </div>
         </li>
     </ul>
 </nav>
