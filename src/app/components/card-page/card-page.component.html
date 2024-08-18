@@ -6,90 +6,95 @@
   <section class="content">
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Crew List</h3>
+        <h3 class="card-title">{{"Crew List" | translate}}</h3>
       </div>
       <div class="card-body">
         <div class="form-group row">
           <div class="col-9">
             <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addCrewModal">
               <i class="fa-solid fa-plus me-1"></i>
-              Add Crew
+              {{"Add Crew" | translate}}
             </button>
           </div>
         </div>
-        <div class="form-group">
-          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-            <ng-container matColumnDef="id">
-              <th mat-header-cell *matHeaderCellDef> Personal ID </th>
-              <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-            </ng-container>
+        <div class="table-responsive">
+          <div class="form-group">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-            <ng-container matColumnDef="firstName">
-              <th mat-header-cell *matHeaderCellDef> {{"First Name" | translate}} </th>
-              <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
-            </ng-container>
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> {{"Personal ID" | translate}} </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+              </ng-container>
 
-            <ng-container matColumnDef="lastName">
-              <th mat-header-cell *matHeaderCellDef> Last Name </th>
-              <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
-            </ng-container>
+              <ng-container matColumnDef="firstName">
+                <th mat-header-cell *matHeaderCellDef> {{"First Name" | translate}} </th>
+                <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+              </ng-container>
 
-            <ng-container matColumnDef="nationality">
-              <th mat-header-cell *matHeaderCellDef> Nationality </th>
-              <td mat-cell *matCellDef="let element"> {{element.nationality}} </td>
-            </ng-container>
+              <ng-container matColumnDef="lastName">
+                <th mat-header-cell *matHeaderCellDef> {{"Last Name" | translate}} </th>
+                <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+              </ng-container>
 
-            <ng-container matColumnDef="title">
-              <th mat-header-cell *matHeaderCellDef> Title </th>
-              <td mat-cell *matCellDef="let element"> {{element.title}} </td>
-            </ng-container>
+              <ng-container matColumnDef="nationality">
+                <th mat-header-cell *matHeaderCellDef> {{"Nationality" | translate}} </th>
+                <td mat-cell *matCellDef="let element"> {{element.nationality}} </td>
+              </ng-container>
 
-            <ng-container matColumnDef="certificates">
-              <th mat-header-cell *matHeaderCellDef> Certificates</th>
-              <td mat-cell *matCellDef="let element">
-                <button class="btn btn-outline-dark btn-sm btn-center" (click)="getCertificate(element)" data-bs-toggle="modal" data-bs-target="#certificateModal">
-                  <i class="fa-solid fa-circle-info"></i>
-                </button>
-              </td>
-            </ng-container>
+              <ng-container matColumnDef="title">
+                <th mat-header-cell *matHeaderCellDef> {{"Title" | translate}} </th>
+                <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+              </ng-container>
 
-            <ng-container matColumnDef="daysOnBoard">
-              <th mat-header-cell *matHeaderCellDef> Days On Board </th>
-              <td mat-cell *matCellDef="let element"> {{element.daysOnBoard}} </td>
-            </ng-container>
+              <ng-container matColumnDef="certificates">
+                <th mat-header-cell *matHeaderCellDef> {{"Certificates" | translate}}</th>
+                <td mat-cell *matCellDef="let element">
+                  <button class="btn btn-outline-dark btn-sm btn-center" (click)="getCertificate(element)"
+                    data-bs-toggle="modal" data-bs-target="#certificateModal">
+                    <i class="fa-solid fa-circle-info"></i>
+                  </button>
+                </td>
+              </ng-container>
 
-            <ng-container matColumnDef="dailyRate">
-              <th mat-header-cell *matHeaderCellDef> Daily Rate </th>
-              <td mat-cell *matCellDef="let element"> {{element.dailyRate}} </td>
-            </ng-container>
+              <ng-container matColumnDef="daysOnBoard">
+                <th mat-header-cell *matHeaderCellDef> {{"Days On Board" | translate}} </th>
+                <td mat-cell *matCellDef="let element"> {{element.daysOnBoard}} </td>
+              </ng-container>
 
-            <ng-container matColumnDef="currency">
-              <th mat-header-cell *matHeaderCellDef> Currency </th>
-              <td mat-cell *matCellDef="let element"> {{element.currency}} </td>
-            </ng-container>
+              <ng-container matColumnDef="dailyRate">
+                <th mat-header-cell *matHeaderCellDef> {{"Daily Rate" | translate}} </th>
+                <td mat-cell *matCellDef="let element"> {{element.dailyRate}} </td>
+              </ng-container>
 
-            <ng-container matColumnDef="totalIncome">
-              <th mat-header-cell *matHeaderCellDef> Total Income </th>
-              <td mat-cell *matCellDef="let element"> {{element.daysOnBoard * element.dailyRate}} </td>
-            </ng-container>
+              <ng-container matColumnDef="currency">
+                <th mat-header-cell *matHeaderCellDef> {{"Currency" | translate}} </th>
+                <td mat-cell *matCellDef="let element"> {{element.currency}} </td>
+              </ng-container>
 
-            <ng-container matColumnDef="actions">
-              <th mat-header-cell *matHeaderCellDef> Actions </th>
-              <td mat-cell *matCellDef="let element">
-                <button class="btn btn-outline-dark btn-sm" (click)="get(element)" data-bs-toggle="modal" data-bs-target="#updateCrewModal">
-                  <i class="fa-solid fa-edit"></i>
-                </button>
-                <button class="btn btn-outline-danger btn-sm ms-1" (click)="removeById(element.id)">
-                  <i class="fa-solid fa-trash"></i>
-                </button>
-              </td>
-            </ng-container>
+              <ng-container matColumnDef="totalIncome">
+                <th mat-header-cell *matHeaderCellDef> {{"Total Income" | translate}} </th>
+                <td mat-cell *matCellDef="let element"> {{element.daysOnBoard * element.dailyRate}} </td>
+              </ng-container>
 
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-          </table>
+              <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef> {{"Actions" | translate}} </th>
+                <td mat-cell *matCellDef="let element">
+                  <button class="btn btn-outline-dark btn-sm" (click)="get(element)" data-bs-toggle="modal"
+                    data-bs-target="#updateCrewModal">
+                    <i class="fa-solid fa-edit"></i>
+                  </button>
+                  <button class="btn btn-outline-danger btn-sm ms-1" (click)="removeById(element.id)">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </ng-container>
 
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+          </div>
         </div>
       </div>
     </div>
@@ -101,7 +106,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5">Add Crew Form</h1>
+        <h1 class="modal-title fs-5">{{"Add Crew Form" | translate}}</h1>
         <button type="button" #addCrewModalCloseBtn id="addCrewModalCloseBtn" class="btn-close" data-bs-dismiss="modal">
         </button>
       </div>
@@ -110,14 +115,14 @@
           <div class="row">
             <div class="col-6">
               <div class="form-group">
-                <label for="firstName">First Name</label>
+                <label for="firstName">{{"First Name" | translate}}</label>
                 <input [(ngModel)]="createCrew.firstName" required minlength="3" name="firstName" type="text"
                   class="form-control" id="firstName">
               </div>
             </div>
             <div class="col-6">
               <div class="form-group">
-                <label for="lastName">Last Name</label>
+                <label for="lastName">{{"Last Name" | translate}}</label>
                 <input [(ngModel)]="createCrew.lastName" required minlength="3" name="lastName" type="text"
                   class="form-control" id="lastName">
               </div>
@@ -125,15 +130,17 @@
           </div>
 
           <div class="form-group mt-2">
-            <label for="certificates">Certificates</label>
-            <select [(ngModel)]="createCrew.certificates" name="certificates" class="form-control" id="certificates" multiple>
-              <option *ngFor="let certificate of certificateOptions" [ngValue]="certificate">{{certificate.certificateName}}</option>
+            <label for="certificates">{{"Certificates" | translate}}</label>
+            <select [(ngModel)]="createCrew.certificates" name="certificates" class="form-control" id="certificates"
+              multiple>
+              <option *ngFor="let certificate of certificateOptions" [ngValue]="certificate">
+                {{certificate.certificateName}}</option>
             </select>
           </div>
-          
+
 
           <div class="form-group mt-2">
-            <label for="crewTitle">Nationality</label>
+            <label for="crewTitle">{{"Nationality" | translate}}</label>
             <select [(ngModel)]="createCrew.nationality" name="nationality" class="form-control" id="nationality">
               @for(nationality of nationalities; track nationality){
               <option [value]="nationality">{{nationality}}</option>
@@ -142,7 +149,7 @@
           </div>
 
           <div class="form-group mt-2">
-            <label for="crewTitle">Title</label>
+            <label for="crewTitle">{{"Title" | translate}}</label>
             <select [(ngModel)]="createCrew.title" name="title" class="form-control" id="crewTitle">
               @for(crewTitle of crewTitles; track crewTitle){
               <option [value]="crewTitle">{{crewTitle}}</option>
@@ -153,14 +160,14 @@
           <div class="row">
             <div class="col-4">
               <div class="form-group text-center">
-                <label for="daysOnBoard">Days On Board</label>
+                <label for="daysOnBoard">{{"Days On Board" | translate}}</label>
                 <input [(ngModel)]="createCrew.daysOnBoard" required min="0" name="daysOnBoard" type="number"
                   class="form-control" id="daysOnBoard">
               </div>
             </div>
             <div class="col-4">
               <div class="form-group text-center">
-                <label for="crewTitle">Currency</label>
+                <label for="crewTitle">{{"Currency" | translate}}</label>
                 <select [(ngModel)]="createCrew.currency" name="title" class="form-control" id="currency">
                   @for(currency of currencies; track currency){
                   <option [value]="currency">{{currency}}</option>
@@ -170,7 +177,7 @@
             </div>
             <div class="col-4">
               <div class="form-group text-center">
-                <label for="dailyRate">Daily Rate</label>
+                <label for="dailyRate">{{"Daily Rate" | translate}}</label>
                 <input [(ngModel)]="createCrew.dailyRate" required min="0" name="dailyRate" type="number"
                   class="form-control" id="dailyRate">
               </div>
@@ -178,7 +185,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-dark w-100">Save</button>
+          <button type="submit" class="btn btn-dark w-100">{{"Save" | translate}}</button>
         </div>
       </form>
     </div>
@@ -190,23 +197,23 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5">Update Crew Form</h1>
+        <h1 class="modal-title fs-5">{{"Update Crew Form" | translate}}</h1>
         <button type="button" #updateCrewModalCloseBtn id="updateCrewModalCloseBtn" class="btn-close"
-        data-bs-dismiss="modal"></button>
+          data-bs-dismiss="modal"></button>
       </div>
       <form formValidation #updateForm="ngForm" (ngSubmit)="updateCrewDetail(updateForm)" autocomplete="off">
         <div class="modal-body">
           <div class="row">
             <div class="col-6">
               <div class="form-group">
-                <label for="updateFirstName">First Name</label>
+                <label for="updateFirstName">{{"First Name" | translate}}</label>
                 <input [(ngModel)]="updateCrew.firstName" required minlength="3" name="updateFirstName" type="text"
                   class="form-control" id="updateFirstName">
               </div>
             </div>
             <div class="col-6">
               <div class="form-group">
-                <label for="updateLastName">Last Name</label>
+                <label for="updateLastName">{{"Last Name" | translate}}</label>
                 <input [(ngModel)]="updateCrew.lastName" required minlength="3" name="updateLastName" type="text"
                   class="form-control" id="updateLastName">
               </div>
@@ -214,14 +221,15 @@
           </div>
 
           <div class="form-group mt-2">
-            <label for="updateNationality">Nationality</label>
-            <select [(ngModel)]="updateCrew.nationality" name="updateNationality" class="form-control" id="updateNationality">
+            <label for="updateNationality">{{"Nationality" | translate}}</label>
+            <select [(ngModel)]="updateCrew.nationality" name="updateNationality" class="form-control"
+              id="updateNationality">
               <option *ngFor="let nationality of nationalities" [value]="nationality">{{nationality}}</option>
             </select>
           </div>
 
           <div class="form-group mt-2">
-            <label for="updateTitle">Title</label>
+            <label for="updateTitle">{{"Title" | translate}} </label>
             <select [(ngModel)]="updateCrew.title" name="updateTitle" class="form-control" id="updateTitle">
               <option *ngFor="let crewTitle of crewTitles" [value]="crewTitle">{{crewTitle}}</option>
             </select>
@@ -230,22 +238,23 @@
           <div class="row">
             <div class="col-4">
               <div class="form-group text-center">
-                <label for="updateDaysOnBoard">Days On Board</label>
+                <label for="updateDaysOnBoard">{{"Days On Board" | translate}}</label>
                 <input [(ngModel)]="updateCrew.daysOnBoard" required min="0" name="updateDaysOnBoard" type="number"
                   class="form-control" id="updateDaysOnBoard">
               </div>
             </div>
             <div class="col-4">
               <div class="form-group text-center">
-                <label for="updateCurrency">Currency</label>
-                <select [(ngModel)]="updateCrew.currency" name="updateCurrency" class="form-control" id="updateCurrency">
+                <label for="updateCurrency">{{"Currency" | translate}}</label>
+                <select [(ngModel)]="updateCrew.currency" name="updateCurrency" class="form-control"
+                  id="updateCurrency">
                   <option *ngFor="let currency of currencies" [value]="currency">{{currency}}</option>
                 </select>
               </div>
             </div>
             <div class="col-4">
               <div class="form-group text-center">
-                <label for="updateDailyRate">Daily Rate</label>
+                <label for="updateDailyRate">{{"Daily Rate" | translate}}</label>
                 <input [(ngModel)]="updateCrew.dailyRate" required min="0" name="updateDailyRate" type="number"
                   class="form-control" id="updateDailyRate">
               </div>
@@ -253,7 +262,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-dark w-100">Save Changes</button>
+          <button type="submit" class="btn btn-dark w-100">{{"Save Changes" | translate}}</button>
         </div>
       </form>
     </div>
@@ -266,15 +275,15 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5">Certificate Form</h1>
+        <h1 class="modal-title fs-5">{{"Certificate Form" | translate}}</h1>
         <button type="button" #certificateModalCloseBtn id="certificateModalCloseBtn" class="btn-close"
-        data-bs-dismiss="modal"></button>
+          data-bs-dismiss="modal"></button>
       </div>
       <form formValidation #viewForm="ngForm" (ngSubmit)="viewCertificate(viewForm)" autocomplete="off">
-        
+
         <div class="modal-body">
           <div class="form-group">
-            <label for="certificateName">Certifaces</label>
+            <label for="certificateName">{{"Certificates" | translate}}</label>
             <ul>
               <li *ngFor="let cert of viewCertificateCrew.certificates">
                 <strong>{{ cert.certificateName }}</strong>: {{ cert.description }}
@@ -282,9 +291,9 @@
             </ul>
           </div>
         </div>
-        <div class="modal-footer">          
-          <button type="submit" class="btn btn-dark w-100">Close</button>
-        </div>     
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-dark w-100">{{"Close" | translate}}</button>
+        </div>
 
       </form>
     </div>

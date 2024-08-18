@@ -1,24 +1,6 @@
 {
   "crews": [
     {
-      "id": "307202",
-      "firstName": "Mehmet Can",
-      "lastName": "ÜNALDI",
-      "nationality": "Turkish",
-      "title": "Captain",
-      "certificates": [
-        {
-          "id": 39164152,
-          "certificateName": "STCW Basic Safety Training",
-          "description": "This certificate confirms that the crew member has successfully completed the STCW Basic Safety Training, covering firefighting, survival techniques, and first aid."
-        }
-      ],
-      "daysOnBoard": 5,
-      "dailyRate": 5,
-      "currency": "USD",
-      "totalIncome": 20
-    },
-    {
       "id": "903540",
       "firstName": "Mehmet Ali",
       "lastName": "Can",
@@ -42,23 +24,11 @@
       "totalIncome": 31125
     },
     {
-      "id": 179486,
-      "firstName": "Captain",
-      "lastName": "Jack Sparrow",
-      "nationality": "Turkish",
+      "id": 114434,
+      "firstName": "Düzenlenecek",
+      "lastName": "Düzenlenecek",
+      "nationality": "American",
       "title": "Engineer",
-      "certificates": [],
-      "daysOnBoard": 52,
-      "dailyRate": 25,
-      "currency": "USD",
-      "totalIncome": 1300
-    },
-    {
-      "id": 388903,
-      "firstName": "asd",
-      "lastName": "asd",
-      "nationality": "Turkish",
-      "title": "Officer",
       "certificates": [
         {
           "id": "39164152",
@@ -71,33 +41,25 @@
           "description": "This certificate indicates that the crew member has received training in advanced firefighting techniques, including the use of breathing apparatus and firefighting strategies."
         },
         {
-          "id": "55969549",
-          "certificateName": "Proficiency in Survival Craft and Rescue Boats",
-          "description": "This certificate confirms that the crew member is proficient in handling survival craft and rescue boats, including launching and operating them in emergency situations."
-        }
-      ],
-      "daysOnBoard": 0,
-      "dailyRate": 0,
-      "currency": "USD",
-      "totalIncome": 0
-    },
-    {
-      "id": 952379,
-      "firstName": "421",
-      "lastName": "124",
-      "nationality": "Turkish",
-      "title": "Officer",
-      "certificates": [
-        {
           "id": "60635886",
           "certificateName": "Medical First Aid",
           "description": "This certificate demonstrates the crew member’s competence in providing first aid and managing medical emergencies on board."
+        },
+        {
+          "id": "55969549",
+          "certificateName": "Proficiency in Survival Craft and Rescue Boats",
+          "description": "This certificate confirms that the crew member is proficient in handling survival craft and rescue boats, including launching and operating them in emergency situations."
+        },
+        {
+          "id": "58935012",
+          "certificateName": "Maritime Security Awareness",
+          "description": "This certificate ensures that the crew member is aware of the maritime security threats and the necessary procedures to maintain security on board."
         }
       ],
-      "daysOnBoard": 24,
-      "dailyRate": 24,
+      "daysOnBoard": 42,
+      "dailyRate": 42,
       "currency": "USD",
-      "totalIncome": 576
+      "totalIncome": 1764
     }
   ],
   "certificates": [

@@ -1,89 +1,31 @@
 {
-    "menu": {
-      "home": "Accueil",
-      "crewList": "Liste d'Équipage",
-      "addCrew": "Ajouter Équipage",
-      "updateCrew": "Mettre à Jour Équipage",
-      "certificates": "Certificats",
-      "settings": "Paramètres",
-      "language": "Langue",
-      "logout": "Se Déconnecter"
-    },
-    "crewList": {
-      "title": "Liste d'Équipage",
-      "addCrewButton": "Ajouter Équipage",
-      "firstName": "Prénom",
-      "lastName": "Nom",
-      "nationality": "Nationalité",
-      "daysOnBoard": "Jours à Bord",
-      "dailyRate": "Tarif Quotidien",
-      "currency": "Monnaie",
-      "totalIncome": "Revenu Total",
-      "actions": "Actions",
-      "editButton": "Modifier",
-      "deleteButton": "Supprimer"
-    },
-    "addCrewModal": {
-      "title": "Ajouter Équipage",
-      "firstName": "Prénom",
-      "lastName": "Nom",
-      "certificates": "Certificats",
-      "nationality": "Nationalité",
-      "daysOnBoard": "Jours à Bord",
-      "currency": "Monnaie",
-      "dailyRate": "Tarif Quotidien",
-      "saveButton": "Sauvegarder"
-    },
-    "updateCrewModal": {
-      "title": "Mettre à Jour Équipage",
-      "firstName": "Prénom",
-      "lastName": "Nom",
-      "nationality": "Nationalité",
-      "daysOnBoard": "Jours à Bord",
-      "currency": "Monnaie",
-      "dailyRate": "Tarif Quotidien",
-      "saveChangesButton": "Sauvegarder les Changements"
-    },
-    "certificateList": {
-      "title": "Liste des Certificats",
-      "addCertificateButton": "Ajouter Certificat",
-      "certificateId": "ID du Certificat",
-      "certificateName": "Nom du Certificat",
-      "description": "Description"
-    },
-    "addCertificateModal": {
-      "title": "Ajouter Certificat",
-      "certificateName": "Nom du Certificat",
-      "description": "Description",
-      "saveButton": "Sauvegarder"
-    },
-    "updateCertificateModal": {
-      "title": "Mettre à Jour Certificat",
-      "certificateName": "Nom du Certificat",
-      "saveChangesButton": "Sauvegarder les Changements"
-    },
-    "certificateModal": {
-      "title": "Détails du Certificat",
-      "closeButton": "Fermer"
-    },
-    "languageSelector": {
-      "english": "Anglais",
-      "french": "Français",
-      "portuguese": "Portugais"
-    },
-    "homepage": {
-      "welcomeMessage": "Bienvenue dans le Système de Gestion d'Équipage",
-      "crewCount": "Total des Membres d'Équipage",
-      "viewDetailsButton": "Voir les Détails"
-    },
-    "actions": {
-      "edit": "Modifier",
-      "delete": "Supprimer",
-      "save": "Sauvegarder",
-      "cancel": "Annuler",
-      "close": "Fermer"
-    },
-    "Language": "Language2",
-    "First Name": "First Name2"
-  }
-  
+    "Language": "Langue",
+    "Personal ID": "ID Personnel",
+    "First Name": "Prénom",
+    "Last Name": "Nom de famille",
+    "Nationality": "Nationalité",
+    "Title": "Titre",
+    "Certificates": "Certificats",
+    "Days On Board": "Jours à Bord",
+    "Daily Rate": "Taux Journalier",
+    "Currency": "Devise",
+    "Total Income": "Revenu Total",
+    "Actions": "Actions",
+    "Add Crew": "Ajouter Équipage",
+    "Certificate List": "Liste des Certificats",
+    "Add Certificate": "Ajouter Certificat",
+    "Crews": "Équipages",
+    "Certificate ID": "ID Certificat",
+    "Crew List" : "Liste des Équipages",
+    "English": "Anglaise",
+    "French": "Français",
+    "Portuguese": "Portugais",
+    "Add Crew Form": "Formulaire d'ajout d'équipage",
+    "Update Crew Form": "Formulaire de mise à jour de l'équipage",
+    "Close": "Fermer",
+    "Save": "Sauvegarder",
+    "Save Changes": "Sauvegarder les modifications",
+    "Certificate Form": "Formulaire de certificat",
+    "Certificate Name": "Nom du certificat",
+    "Update Certificate Form": "Formulaire de mise à jour du certificat"
+}

@@ -6,14 +6,14 @@
   <section class="content">
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Certificate List</h3>
+        <h3 class="card-title">{{"Certificate List" | translate}}</h3>
       </div>
       <div class="card-body">
         <div class="form-group row">
           <div class="col-9">
             <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addCertificateModal">
               <i class="fa-solid fa-plus me-1"></i>
-              Add Certificate
+              {{"Add Certificate" | translate}}
             </button>
           </div>
         </div>
@@ -21,17 +21,17 @@
           <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
             <ng-container matColumnDef="id">
-              <th mat-header-cell *matHeaderCellDef> Certificate ID </th>
+              <th mat-header-cell *matHeaderCellDef> {{"Certificate ID" | translate}} </th>
               <td mat-cell *matCellDef="let element"> {{element.id}} </td>
             </ng-container>
 
             <ng-container matColumnDef="certificateName">
-              <th mat-header-cell *matHeaderCellDef> Certificate Name </th>
+              <th mat-header-cell *matHeaderCellDef> {{"Certificate Name" | translate}} </th>
               <td mat-cell *matCellDef="let element"> {{element.certificateName}} </td>
             </ng-container>
 
             <ng-container matColumnDef="description">
-              <th mat-header-cell *matHeaderCellDef> Description </th>
+              <th mat-header-cell *matHeaderCellDef> {{"Description" | translate}} </th>
               <td mat-cell *matCellDef="let element"> {{element.description}} </td>
             </ng-container>
 
@@ -50,7 +50,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5">Add Certificate Form</h1>
+        <h1 class="modal-title fs-5">{{"Add Certificate Form" | translate}}</h1>
         <button type="button" #addCertificateModalCloseBtn id="addCertificateModalCloseBtn" class="btn-close"
           data-bs-dismiss="modal">
         </button>
@@ -58,13 +58,13 @@
       <form formValidation #createForm="ngForm" (ngSubmit)="create(createForm)" autocomplete="off">
         <div class="modal-body">
           <div class="form-group">
-            <label for="firstName">Certificate Name</label>
+            <label for="firstName">{{"Certificate Name" | translate}}</label>
             <input [(ngModel)]="createCertificate.certificateName" required minlength="3" name="certificateName"
               type="text" class="form-control" id="firstName">
           </div>
 
           <div class="form-group mt-2">
-            <label for="description">Description</label>
+            <label for="description">{{"Description" | translate}}</label>
             <textarea [(ngModel)]="createCertificate.description" required minlength="3" name="description"
               class="form-control" id="description" rows="4" cols="50"></textarea>
           </div>
@@ -77,27 +77,27 @@
   </div>
 </div>
 
-<!-- NG Form Update Modal -->
+<!-- NG Form Update Modal
 <div class="modal fade" id="updateCertificateModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5">Update Certificate Form</h1>
+        <h1 class="modal-title fs-5">{{"Update Certificate Form" | translate}}</h1>
         <button type="button" #updateCertificateModalCloseBtn id="updateCertificateModalCloseBtn" class="btn-close"
           data-bs-dismiss="modal"></button>
       </div>
       <form formValidation #updateForm="ngForm" (ngSubmit)="updateCertificateDetail(updateForm)" autocomplete="off">
         <div class="modal-body">
           <div class="form-group">
-            <label for="updateFirstName">Certificate Name</label>
+            <label for="updateFirstName">{{"Certificate Name" | translate}}</label>
             <input [(ngModel)]="updateCertificate.certificateName" required minlength="3" name="updateFirstName"
               type="text" class="form-control" id="updateFirstName">
           </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-dark w-100">Save Changes</button>
+          <button type="submit" class="btn btn-dark w-100">{{"Save Changes" | translate}}</button>
         </div>
       </form>
     </div>
   </div>
-</div>
+</div> -->

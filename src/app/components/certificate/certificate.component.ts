@@ -4,12 +4,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpService } from '../../services/http.service';
 import { CertificateModel } from '../../models/certificate.model';
+import { TranslationService } from '../../services/translation.service';
+import { TranslateModule } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 
 
 @Component({
   selector: 'app-certificate',
   standalone: true,
-  imports: [MatTableModule, CommonModule, FormsModule],
+  imports: [MatTableModule, CommonModule, FormsModule, TranslateModule],
   templateUrl: './certificate.component.html',
   styleUrl: './certificate.component.css'
 })
@@ -27,7 +30,8 @@ export class CertificateComponent {
 
 
   constructor(
-    private http: HttpService) {
+    private http: HttpService,
+    private translateService: TranslationService) {
     this.getAll();
   }
 

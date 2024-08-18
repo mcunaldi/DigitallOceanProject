@@ -1,13 +1,11 @@
-import { Component, ElementRef, inject, TemplateRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CrewModel, Currency, Nationality, Title } from '../../models/crew.model';
 import { MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpService } from '../../services/http.service';
 import { CertificateModel } from '../../models/certificate.model';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { Subscription } from 'rxjs';
-import { OnInit, OnDestroy } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { TranslationService } from '../../services/translation.service';
 
 @Component({
@@ -38,9 +36,7 @@ export class CardPageComponent {
 
   certificateOptions: CertificateModel[] = [];
   certificateNames: string[] = [];
-  
-  private eventSubscription: Subscription | undefined;
-  
+    
   constructor(
     private http: HttpService,
     private translateService : TranslationService) 
@@ -48,27 +44,6 @@ export class CardPageComponent {
     this.getAll();
     this.getCertificates();
   }
-
-  ngOnInit() {
-    // Olayı dinleyin
-    this.eventSubscription = this.translateService.triggerEvent$.subscribe(() => {
-      // Olay tetiklendiğinde yapılacak işlemler
-      this.handleEvent();
-    });
-  }
-
-  ngOnDestroy() {
-    // Bellek sızıntısını önlemek için aboneliği sonlandırın
-    if (this.eventSubscription) {
-      this.eventSubscription.unsubscribe();
-    }
-  }
-
-    // handleEvent fonksiyonunu tanımlayın
-    handleEvent() {
-      console.log('Olay tetiklendi!');
-      // Burada istediğiniz diğer işlemleri yapabilirsiniz
-    }
 
   getAll() {
     this.http.get<CrewModel[]>("crews", (res: any) => {
