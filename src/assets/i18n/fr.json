@@ -27,5 +27,6 @@
     "Save Changes": "Sauvegarder les modifications",
     "Certificate Form": "Formulaire de certificat",
     "Certificate Name": "Nom du certificat",
-    "Update Certificate Form": "Formulaire de mise à jour du certificat"
+    "Update Certificate Form": "Formulaire de mise à jour du certificat",
+    "Description" : "Description"
 }
