@@ -20,9 +20,9 @@
         <div class="form-group">
           <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-            <ng-container matColumnDef="position">
-              <th mat-header-cell *matHeaderCellDef> No. </th>
-              <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef> Personal ID </th>
+              <td mat-cell *matCellDef="let element"> {{element.id}} </td>
             </ng-container>
 
             <ng-container matColumnDef="firstName">
@@ -68,6 +68,18 @@
             <ng-container matColumnDef="totalIncome">
               <th mat-header-cell *matHeaderCellDef> Total Income </th>
               <td mat-cell *matCellDef="let element"> {{element.daysOnBoard * element.dailyRate}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef> Actions </th>
+              <td mat-cell *matCellDef="let element">
+                <button class="btn btn-outline-dark btn-sm" (click)="get(element)" data-bs-toggle="modal" data-bs-target="#updateCrewModal">
+                  <i class="fa-solid fa-edit"></i>
+                </button>
+                <button class="btn btn-outline-danger btn-sm ms-1" (click)="removeById(element.id)">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -155,6 +167,81 @@
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-dark w-100">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- NG Form Update Modal -->
+<div class="modal fade" id="updateCrewModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Update Crew Form</h1>
+        <button type="button" #updateCrewModalCloseBtn id="updateCrewModalCloseBtn" class="btn-close"
+        data-bs-dismiss="modal"></button>
+      </div>
+      <form formValidation #updateForm="ngForm" (ngSubmit)="updateCrewDetail(updateForm)" autocomplete="off">
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label for="updateFirstName">First Name</label>
+                <input [(ngModel)]="updateCrew.firstName" required minlength="3" name="updateFirstName" type="text"
+                  class="form-control" id="updateFirstName">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label for="updateLastName">Last Name</label>
+                <input [(ngModel)]="updateCrew.lastName" required minlength="3" name="updateLastName" type="text"
+                  class="form-control" id="updateLastName">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group mt-2">
+            <label for="updateNationality">Nationality</label>
+            <select [(ngModel)]="updateCrew.nationality" name="updateNationality" class="form-control" id="updateNationality">
+              <option *ngFor="let nationality of nationalities" [value]="nationality">{{nationality}}</option>
+            </select>
+          </div>
+
+          <div class="form-group mt-2">
+            <label for="updateTitle">Title</label>
+            <select [(ngModel)]="updateCrew.title" name="updateTitle" class="form-control" id="updateTitle">
+              <option *ngFor="let crewTitle of crewTitles" [value]="crewTitle">{{crewTitle}}</option>
+            </select>
+          </div>
+
+          <div class="row">
+            <div class="col-4">
+              <div class="form-group text-center">
+                <label for="updateDaysOnBoard">Days On Board</label>
+                <input [(ngModel)]="updateCrew.daysOnBoard" required min="0" name="updateDaysOnBoard" type="number"
+                  class="form-control" id="updateDaysOnBoard">
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group text-center">
+                <label for="updateCurrency">Currency</label>
+                <select [(ngModel)]="updateCrew.currency" name="updateCurrency" class="form-control" id="updateCurrency">
+                  <option *ngFor="let currency of currencies" [value]="currency">{{currency}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group text-center">
+                <label for="updateDailyRate">Daily Rate</label>
+                <input [(ngModel)]="updateCrew.dailyRate" required min="0" name="updateDailyRate" type="number"
+                  class="form-control" id="updateDailyRate">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-dark w-100">Save Changes</button>
         </div>
       </form>
     </div>

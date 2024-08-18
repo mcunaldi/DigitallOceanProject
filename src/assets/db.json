@@ -1,41 +1,64 @@
 {
   "crews": [
     {
-      "position": 1,
+      "id": 307202,
       "firstName": "Mehmet Can",
-      "lastName": "Ünaldı",
+      "lastName": "A",
       "nationality": "Turkish",
-      "title": "Officer",
-      "certificates": "Officer",
-      "daysOnBoard": 1,
-      "dailyRate": 10,
-      "currency": "USD",
-      "totalIncome": 0
-    },
-    {
-      "position": 2,
-      "firstName": "Can",
-      "lastName": "Ünaldı",
-      "nationality": "English",
       "title": "Captain",
-      "certificates": "Officer",
-      "daysOnBoard": 1,
-      "dailyRate": 10,
+      "certificates": "",
+      "daysOnBoard": 5,
+      "dailyRate": 4,
       "currency": "USD",
-      "totalIncome": 0
+      "totalIncome": 20
     },
     {
-      "id": "92b9",
-      "position": 0,
-      "firstName": "Mehmet Can",
-      "lastName": "ÜNALDI",
-      "nationality": "Turkish",
-      "title": "Engineer",
+      "id": 903540,
+      "firstName": "Mehmet Ali",
+      "lastName": "Can",
+      "nationality": "American",
+      "title": "Officer",
       "certificates": "",
-      "daysOnBoard": 52,
-      "dailyRate": 42,
+      "daysOnBoard": 25,
+      "dailyRate": 1245,
       "currency": "EURO",
-      "totalIncome": 0
+      "totalIncome": 31125
+    },
+    {
+      "id": 837135,
+      "firstName": "Jack",
+      "lastName": "Jones",
+      "nationality": "British",
+      "title": "Cooker",
+      "certificates": "",
+      "daysOnBoard": 25,
+      "dailyRate": 25,
+      "currency": "USD",
+      "totalIncome": 625
+    },
+    {
+      "id": 912192,
+      "firstName": "Captain",
+      "lastName": "Jack Sparrow",
+      "nationality": "Turkish",
+      "title": "Captain",
+      "certificates": "",
+      "daysOnBoard": 25,
+      "dailyRate": 25,
+      "currency": "EURO",
+      "totalIncome": 625
+    },
+    {
+      "id": 902892,
+      "firstName": "Semih",
+      "lastName": "ÜNALDI",
+      "nationality": "Portuguese",
+      "title": "Mechanic",
+      "certificates": "",
+      "daysOnBoard": 15125,
+      "dailyRate": 125125,
+      "currency": "USD",
+      "totalIncome": 1892515625
     }
   ]
 }
