@@ -1,6 +1,7 @@
 export class CertificateModel {
     id: number = 0;
     certificateName: string = "";
+    description: string = "";
   }
 
   

@@ -19,7 +19,7 @@ export class CertificateComponent {
   @ViewChild("addCertificateModalCloseBtn") addCertificateModalCloseBtn: ElementRef<HTMLButtonElement> | undefined;
   @ViewChild("updateCertificateModalCloseBtn") updateCertificateModalCloseBtn: ElementRef<HTMLButtonElement> | undefined;
 
-  displayedColumns: string[] = ['id', 'certificateName'];
+  displayedColumns: string[] = ['id', 'certificateName', 'description'];
   dataSource: CertificateModel[] = [];
 
   createCertificate: CertificateModel = new CertificateModel();
@@ -40,14 +40,14 @@ export class CertificateComponent {
   generateUniqueId(): number {
     let id: number;
     do {
-      id = Math.floor(100000 + Math.random() * 900000);
+      id = Math.floor(100000 + Math.random() * 90000000);
     } while (this.dataSource.some(model => model.id === id));
     return id;
   }
 
   create(form: NgForm) {
     this.createCertificate.id = this.generateUniqueId();
-    this.http.post<string>("Certificates", this.createCertificate, () => {
+    this.http.post<string>("certificates", this.createCertificate, () => {
       this.createCertificate = new CertificateModel();
       this.addCertificateModalCloseBtn?.nativeElement.click();
       this.getAll();
@@ -60,7 +60,7 @@ export class CertificateComponent {
 
   updateCertificateDetail(form: NgForm) {
     if (this.updateCertificate.id) {
-      this.http.put<CertificateModel>("Certificates", this.updateCertificate.id, this.updateCertificate, (res) => {
+      this.http.put<CertificateModel>("certificates", this.updateCertificate.id, this.updateCertificate, (res) => {
         console.log(res);
         this.updateCertificate = new CertificateModel();
         this.updateCertificateModalCloseBtn?.nativeElement.click();
@@ -72,7 +72,7 @@ export class CertificateComponent {
   }
 
   removeById(id: number) {
-    this.http.delete<CertificateModel>("Certificates", id, (res) => {
+    this.http.delete<CertificateModel>("certificates", id, (res) => {
       console.log('Certificate member removed successfully', res);
       this.getAll();
     }, (err) => {

@@ -1,0 +1,16 @@
+.brand-text{
+    color: #007bff;
+    font-weight: bolder;
+}
+
+.brand-link, .brand-link .brand-text {
+    text-decoration: none;
+}
+
+.main-sidebar{
+    background-color: whitesmoke;
+}
+
+.nav-link p, .nav-link i {
+    color: black;
+}
