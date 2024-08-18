@@ -32,10 +32,3 @@ export enum Nationality {
   Portuguese = "Portuguese"
 }
 
-export enum Certificate {
-  STCWBasicSafetyTraining = 'STCW Basic Safety Training',
-  AdvancedFireFighting = 'Advanced Fire Fighting',
-  MedicalFirstAid = 'Medical First Aid',
-  GMDSSGeneralOperatorsCertificate = 'GMDSS General Operator\'s Certificate',
-  BridgeResourceManagement = 'Bridge Resource Management'
-}

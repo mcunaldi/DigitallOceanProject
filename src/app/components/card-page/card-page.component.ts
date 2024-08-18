@@ -1,10 +1,9 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { Certificate, CrewModel, Currency, Nationality, Title } from '../../models/crew.model';
+import { CrewModel, Currency, Nationality, Title } from '../../models/crew.model';
 import { MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpService } from '../../services/http.service';
-import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-card-page',
@@ -27,7 +26,6 @@ export class CardPageComponent {
   crewTitles: Title[] = Object.values(Title);
   nationalities: Nationality[] = Object.values(Nationality);
   currencies: Currency[] = Object.values(Currency);
-  selectedCertificates = Object.values(Certificate);
 
   constructor(
     private http: HttpService) {
