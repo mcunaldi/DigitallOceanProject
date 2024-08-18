@@ -1,9 +1,10 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, TemplateRef, ViewChild } from '@angular/core';
 import { CrewModel, Currency, Nationality, Title } from '../../models/crew.model';
 import { MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpService } from '../../services/http.service';
+import { CertificateModel } from '../../models/certificate.model';
 
 @Component({
   selector: 'app-card-page',
@@ -16,20 +17,29 @@ export class CardPageComponent {
 
   @ViewChild("addCrewModalCloseBtn") addCrewModalCloseBtn: ElementRef<HTMLButtonElement> | undefined;
   @ViewChild("updateCrewModalCloseBtn") updateCrewModalCloseBtn: ElementRef<HTMLButtonElement> | undefined;
+  @ViewChild("certificateModalCloseBtn") certificateModalCloseBtn: ElementRef<HTMLButtonElement> | undefined;
 
   displayedColumns: string[] = ['id', 'firstName', 'lastName', 'nationality', 'title', 'certificates', 'daysOnBoard', 'dailyRate', 'currency', 'totalIncome', 'actions'];
   dataSource: CrewModel[] = [];
+  certificateDataSource: CrewModel[] = [];
 
   createCrew: CrewModel = new CrewModel();
   updateCrew: CrewModel = new CrewModel();
+  viewCertificateCrew: CrewModel = new CrewModel();
 
   crewTitles: Title[] = Object.values(Title);
   nationalities: Nationality[] = Object.values(Nationality);
   currencies: Currency[] = Object.values(Currency);
 
+  certificateOptions: CertificateModel[] = [];
+  certificateNames: string[] = [];
+  
+
   constructor(
-    private http: HttpService) {
+    private http: HttpService) 
+  {
     this.getAll();
+    this.getCertificates();
   }
 
   getAll() {
@@ -37,6 +47,13 @@ export class CardPageComponent {
       this.dataSource = res;
     })
   }
+
+  getCertificates() {
+    this.http.get<CertificateModel[]>("certificates", (res: CertificateModel[]) => {
+      this.certificateOptions = res;
+    });
+  }
+
   generateUniqueId(): number {
     let id: number;
     do {
@@ -79,6 +96,23 @@ export class CardPageComponent {
     }, (err) => {
       console.error('Error removing crew member:', err);
     });
+  }
+
+  getCertificate(model: CrewModel) {
+    this.viewCertificateCrew = { ...model };
+  }
+
+  viewCertificate(form: NgForm) {
+    if (this.viewCertificateCrew.id) {
+      this.http.put<CrewModel>("crews", this.viewCertificateCrew.id, this.viewCertificateCrew, (res) => {
+        console.log(res);
+        this.viewCertificateCrew = new CrewModel();
+        this.certificateModalCloseBtn?.nativeElement.click();
+        this.getAll();
+      }, (err) => {
+        console.error('Error updating crew:', err);
+      });
+    }
   }
 
 }

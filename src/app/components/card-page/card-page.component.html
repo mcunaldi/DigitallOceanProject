@@ -47,7 +47,11 @@
 
             <ng-container matColumnDef="certificates">
               <th mat-header-cell *matHeaderCellDef> Certificates</th>
-              <td mat-cell *matCellDef="let element"> {{element.certificates}} </td>
+              <td mat-cell *matCellDef="let element">
+                <button class="btn btn-outline-dark btn-sm btn-center" (click)="getCertificate(element)" data-bs-toggle="modal" data-bs-target="#certificateModal">
+                  <i class="fa-solid fa-circle-info"></i>
+                </button>
+              </td>
             </ng-container>
 
             <ng-container matColumnDef="daysOnBoard">
@@ -119,6 +123,14 @@
               </div>
             </div>
           </div>
+
+          <div class="form-group mt-2">
+            <label for="certificates">Certificates</label>
+            <select [(ngModel)]="createCrew.certificates" name="certificates" class="form-control" id="certificates" multiple>
+              <option *ngFor="let certificate of certificateOptions" [ngValue]="certificate">{{certificate.certificateName}}</option>
+            </select>
+          </div>
+          
 
           <div class="form-group mt-2">
             <label for="crewTitle">Nationality</label>
@@ -243,6 +255,37 @@
         <div class="modal-footer">
           <button type="submit" class="btn btn-dark w-100">Save Changes</button>
         </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- NG Form Certificate Modal -->
+<div class="modal fade" id="certificateModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Certificate Form</h1>
+        <button type="button" #certificateModalCloseBtn id="certificateModalCloseBtn" class="btn-close"
+        data-bs-dismiss="modal"></button>
+      </div>
+      <form formValidation #viewForm="ngForm" (ngSubmit)="viewCertificate(viewForm)" autocomplete="off">
+        
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="certificateName">Certifaces</label>
+            <ul>
+              <li *ngFor="let cert of viewCertificateCrew.certificates">
+                <strong>{{ cert.certificateName }}</strong>: {{ cert.description }}
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="modal-footer">          
+          <button type="submit" class="btn btn-dark w-100">Close</button>
+        </div>     
+
       </form>
     </div>
   </div>

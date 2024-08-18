@@ -1,2 +1,13 @@
+.btn-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: #007bff;
+  }
 
+ .certificateModal{
+    z-index: 2000;
+  }
   

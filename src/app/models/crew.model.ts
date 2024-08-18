@@ -1,10 +1,12 @@
+import { CertificateModel } from "./certificate.model";
+
 export class CrewModel {
   id: number = 0;
   firstName: string = "";
   lastName: string = "";
   nationality: Nationality = Nationality.Turkish;
   title: Title = Title.Officer;
-  certificates: string = "";
+  certificates: CertificateModel[] = [];
   daysOnBoard: number = 0;
   dailyRate: number = 0;
   currency: Currency = Currency.USD;

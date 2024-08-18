@@ -3,7 +3,7 @@ import { MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpService } from '../../services/http.service';
-import { Certificate, CertificateModel } from '../../models/certificate.model';
+import { CertificateModel } from '../../models/certificate.model';
 
 
 @Component({
@@ -25,7 +25,6 @@ export class CertificateComponent {
   createCertificate: CertificateModel = new CertificateModel();
   updateCertificate: CertificateModel = new CertificateModel();
 
-  CertificateTitles: Certificate[] = Object.values(Certificate);
 
   constructor(
     private http: HttpService) {
