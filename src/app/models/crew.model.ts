@@ -24,7 +24,7 @@ export enum Title {
 
 export enum Currency {
   USD = "USD",
-  EURO = "EURO"
+  EUR = "EUR"
 }
 
 export enum Nationality {

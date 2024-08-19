@@ -11,7 +11,6 @@
   z-index: 2000;
 }
 
-/* Tablo başlıkları ve hücre içeriklerini ortalamak için CSS */
 .mat-header-cell, .mat-cell {
   display: flex;
   align-items: center;

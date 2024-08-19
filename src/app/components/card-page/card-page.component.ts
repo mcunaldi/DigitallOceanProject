@@ -123,14 +123,36 @@ export class CardPageComponent {
   }
 
   updateTotalIncome(element: any, discount: string = '0'): void {
-    const discountRate = parseInt(discount, 10) / 100;
+    const discountRate = parseInt(discount, 10) || 0;
+    const discountPercentage = discountRate / 100;
   
     const grossIncome = element.daysOnBoard * element.dailyRate;
-    const discountedIncome = grossIncome * (1 - discountRate);
+    const discountedIncome = grossIncome * (1 - discountPercentage);
   
     element.totalIncome = discountedIncome;
     this.cdr.detectChanges();
   }
   
-  
+  isSelected(certificate: CertificateModel): boolean {
+    return this.createCrew.certificates.some(c => c.id === certificate.id);
+  }
+
+  onCheckboxChange(event: Event, certificate: CertificateModel) {
+    const input = event.target as HTMLInputElement;
+    if (input.checked) {
+      this.addCertificate(certificate);
+    } else {
+      this.removeCertificate(certificate);
+    }
+  }
+
+  addCertificate(certificate: CertificateModel) {
+    if (!this.createCrew.certificates.some(c => c.id === certificate.id)) {
+      this.createCrew.certificates.push(certificate);
+    }
+  }
+
+  removeCertificate(certificate: CertificateModel) {
+    this.createCrew.certificates = this.createCrew.certificates.filter(c => c.id !== certificate.id);
+  }
 }

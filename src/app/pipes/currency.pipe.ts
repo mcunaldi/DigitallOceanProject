@@ -18,7 +18,7 @@ export class CurrencyPipe implements PipeTransform {
       case Currency.USD:
         symbol = '$';
         break;
-      case Currency.EURO:
+      case Currency.EUR:
         symbol = '€';
         break;
       default:
