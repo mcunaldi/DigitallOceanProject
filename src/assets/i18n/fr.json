@@ -16,7 +16,7 @@
     "Add Certificate": "Ajouter Certificat",
     "Crews": "Équipages",
     "Certificate ID": "ID Certificat",
-    "Crew List" : "Liste des Équipages",
+    "Crew List": "Liste des Équipages",
     "English": "Anglaise",
     "French": "Français",
     "Portuguese": "Portugais",
@@ -28,5 +28,8 @@
     "Certificate Form": "Formulaire de certificat",
     "Certificate Name": "Nom du certificat",
     "Update Certificate Form": "Formulaire de mise à jour du certificat",
-    "Description" : "Description"
+    "Description": "Description",
+    "Learn here. Dream here. Develop here.": "Apprenez ici. Rêvez ici. Développez ici.",
+    "Join the wave of developers building and scaling apps with simple cloud tools,top-tier reliability, and predictable pricing. Powerful and production-ready, our cloud platform has the solutions you need to succeed.": "Rejoignez la vague de développeurs qui créent et font évoluer des applications avec des outils cloud simples, une fiabilité de premier ordre et des prix prévisibles. Puissante et prête pour la production, notre plateforme cloud offre les solutions dont vous avez besoin pour réussir.",
+    "Get Started": "Commencer"
 }

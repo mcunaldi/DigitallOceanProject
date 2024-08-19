@@ -11,6 +11,7 @@ export class CrewModel {
   dailyRate: number = 0;
   currency: Currency = Currency.USD;
   totalIncome: number = 0;
+  discount: number = 0;
 }
 
 export enum Title {

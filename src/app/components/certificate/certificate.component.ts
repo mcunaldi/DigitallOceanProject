@@ -54,30 +54,31 @@ export class CertificateComponent {
     });
   }
 
-  get(model: CertificateModel) {
-    this.updateCertificate = { ...model };
-  }
+  //crud işlemleri tamamlanırsa kullanılabilir.
+  // get(model: CertificateModel) {
+  //   this.updateCertificate = { ...model };
+  // }
 
-  updateCertificateDetail(form: NgForm) {
-    if (this.updateCertificate.id) {
-      this.http.put<CertificateModel>("certificates", this.updateCertificate.id, this.updateCertificate, (res) => {
-        console.log(res);
-        this.updateCertificate = new CertificateModel();
-        this.updateCertificateModalCloseBtn?.nativeElement.click();
-        this.getAll();
-      }, (err) => {
-        console.error('Error updating Certificate:', err);
-      });
-    }
-  }
+  // updateCertificateDetail(form: NgForm) {
+  //   if (this.updateCertificate.id) {
+  //     this.http.put<CertificateModel>("certificates", this.updateCertificate.id, this.updateCertificate, (res) => {
+  //       console.log(res);
+  //       this.updateCertificate = new CertificateModel();
+  //       this.updateCertificateModalCloseBtn?.nativeElement.click();
+  //       this.getAll();
+  //     }, (err) => {
+  //       console.error('Error updating Certificate:', err);
+  //     });
+  //   }
+  // }
 
-  removeById(id: number) {
-    this.http.delete<CertificateModel>("certificates", id, (res) => {
-      console.log('Certificate member removed successfully', res);
-      this.getAll();
-    }, (err) => {
-      console.error('Error removing Certificate member:', err);
-    });
-  }
+  // removeById(id: number) {
+  //   this.http.delete<CertificateModel>("certificates", id, (res) => {
+  //     console.log('Certificate member removed successfully', res);
+  //     this.getAll();
+  //   }, (err) => {
+  //     console.error('Error removing Certificate member:', err);
+  //   });
+  // }
 
 }

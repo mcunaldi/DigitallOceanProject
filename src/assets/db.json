@@ -1,58 +1,17 @@
 {
   "crews": [
     {
-      "id": "479573",
-      "firstName": "asd",
-      "lastName": "asd",
-      "nationality": "Turkish",
-      "title": "Officer",
-      "certificates": [
-        {
-          "id": "39164152",
-          "certificateName": "STCW Basic Safety Training",
-          "description": "This certificate confirms that the crew member has successfully completed the STCW Basic Safety Training, covering firefighting, survival techniques, and first aid."
-        }
-      ],
-      "daysOnBoard": 0,
-      "dailyRate": 0,
-      "currency": "USD",
-      "totalIncome": 0
-    },
-    {
-      "id": "789212",
-      "firstName": "3123",
-      "lastName": "123",
+      "id": "161355",
+      "firstName": "",
+      "lastName": "",
       "nationality": "Turkish",
       "title": "Officer",
       "certificates": [],
-      "daysOnBoard": 0,
-      "dailyRate": 0,
+      "daysOnBoard": 2502,
+      "dailyRate": 25,
       "currency": "USD",
-      "totalIncome": 0
-    },
-    {
-      "id": "356154",
-      "firstName": "ASD",
-      "lastName": "ASD",
-      "nationality": "Turkish",
-      "title": "Captain",
-      "certificates": [],
-      "daysOnBoard": 213,
-      "dailyRate": 123,
-      "currency": "USD",
-      "totalIncome": 26199
-    },
-    {
-      "id": "366413",
-      "firstName": "124",
-      "lastName": "124",
-      "nationality": "Turkish",
-      "title": "Officer",
-      "certificates": [],
-      "daysOnBoard": 0,
-      "dailyRate": 0,
-      "currency": "USD",
-      "totalIncome": 0
+      "totalIncome": 6250,
+      "discount": 0
     }
   ],
   "certificates": [

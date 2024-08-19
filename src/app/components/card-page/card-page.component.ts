@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
 import { CrewModel, Currency, Nationality, Title } from '../../models/crew.model';
 import { MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
@@ -6,11 +6,14 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { HttpService } from '../../services/http.service';
 import { CertificateModel } from '../../models/certificate.model';
 import { TranslateModule } from '@ngx-translate/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { CurrencyPipe } from '../../pipes/currency.pipe';
 
 @Component({
   selector: 'app-card-page',
   standalone: true,
-  imports: [MatTableModule, CommonModule, FormsModule, TranslateModule],
+  imports: [MatTableModule, CommonModule, FormsModule, TranslateModule, MatFormFieldModule, MatInputModule, CurrencyPipe],
   templateUrl: './card-page.component.html',
   styleUrls: ['./card-page.component.css']
 })
@@ -21,7 +24,7 @@ export class CardPageComponent {
   @ViewChild("updateCrewModalCloseBtn") updateCrewModalCloseBtn: ElementRef<HTMLButtonElement> | undefined;
   @ViewChild("certificateModalCloseBtn") certificateModalCloseBtn: ElementRef<HTMLButtonElement> | undefined;
 
-  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'nationality', 'title', 'certificates', 'daysOnBoard', 'dailyRate', 'currency', 'totalIncome', 'actions'];
+  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'nationality', 'title', 'certificates', 'daysOnBoard', 'dailyRate', 'currency', 'discount','totalIncome', 'actions'];
   dataSource: CrewModel[] = [];
   certificateDataSource: CrewModel[] = [];
 
@@ -37,7 +40,8 @@ export class CardPageComponent {
   certificateNames: string[] = [];
     
   constructor(
-    private http: HttpService) 
+    private http: HttpService,
+    private cdr: ChangeDetectorRef) 
   {
     this.getAll();
     this.getCertificates();
@@ -46,6 +50,7 @@ export class CardPageComponent {
   getAll() {
     this.http.get<CrewModel[]>("crews", (res: any) => {
       this.dataSource = res;
+      this.dataSource.forEach(element => this.updateTotalIncome(element));
     })
   }
 
@@ -82,7 +87,8 @@ export class CardPageComponent {
       this.http.put<CrewModel>("crews", this.updateCrew.id, this.updateCrew, (res) => {
         console.log(res);
         this.updateCrew = new CrewModel();
-        this.updateCrewModalCloseBtn?.nativeElement.click();
+        this.updateCrewModalCloseBtn?.nativeElement.click();        
+        this.updateCrew.totalIncome = this.updateCrew.dailyRate * this.updateCrew.daysOnBoard;
         this.getAll();
       }, (err) => {
         console.error('Error updating crew:', err);
@@ -116,4 +122,15 @@ export class CardPageComponent {
     }
   }
 
+  updateTotalIncome(element: any, discount: string = '0'): void {
+    const discountRate = parseInt(discount, 10) / 100;
+  
+    const grossIncome = element.daysOnBoard * element.dailyRate;
+    const discountedIncome = grossIncome * (1 - discountRate);
+  
+    element.totalIncome = discountedIncome;
+    this.cdr.detectChanges();
+  }
+  
+  
 }
