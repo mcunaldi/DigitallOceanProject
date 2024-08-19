@@ -10,6 +10,6 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class HomeComponent {
   navigateToDigitalOcean(): void {
-    window.open('https://www.digitalocean.com/', '_blank');
+    window.open('https://www.digitall-ocean.com/', '_blank');
   }  
 }
