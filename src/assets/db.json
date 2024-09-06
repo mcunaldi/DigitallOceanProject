@@ -33,9 +33,9 @@
           "description": "This certificate ensures that the crew member is aware of the maritime security threats and the necessary procedures to maintain security on board."
         }
       ],
-      "daysOnBoard": 29,
+      "daysOnBoard": 28,
       "dailyRate": 299,
-      "currency": "EUR",
+      "currency": "USD",
       "totalIncome": 8671,
       "discount": 0
     },
